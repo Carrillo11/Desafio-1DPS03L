@@ -1,0 +1,34 @@
+<div class="header">
+    <h1>Datos del Cliente</h1>
+    <p>Ingrese de la reparación.</p>
+    </div>
+    <label>Nombre:</label>
+    <input type="text" [(ngModel)]="nombre">
+    <label>DUI:</label>
+    <input type="text" [(ngModel)]="dui">
+    <label>Vehiculo:</label>
+    <input type="text" [(ngModel)]="vehiculo">
+    <label>Costo:</label>
+    <input type="number" [(ngModel)]="costo" min=0>
+    <button class="button" (click)="ingresar()">Ingresar</button>
+    <br/><br/>
+    <table [hidden]="contador == 0">
+    <thead>
+    <tr>
+    <th>Nombre</th>
+    <th>DUI</th>
+    <th>Vehiculo</th>
+    <th>Costo</th>
+    <th>Visita</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tcliente of registro">
+        <td>{{tcliente.nombre}}</td>
+        <td>{{tcliente.dui}}</td>
+        <td>{{tcliente.vehiculo}}</td>
+        <td>{{tcliente.costo}}</td>
+        <td>{{tcliente.visita}}</td>
+        </tr>
+        </tbody>
+        </table>
