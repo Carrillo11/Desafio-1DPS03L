@@ -36,20 +36,6 @@ export class ReparacionComponent implements OnInit {
   console.log(repdui.length++)
   console.log(this.registro);
 
-      if(repdui.length==1){
-        this.descuento=0;
-        this.total=this.costo
-      }
-     else if(repdui.length>=2 && repdui.length<=4){
-        this.descuento=this.costo*0.05;
-        this.total=this.costo-this.descuento;
-      }
-      else if(repdui.length>4){
-        this.descuento=this.costo*0.1;
-        this.total=this.costo-this.descuento;
-      }
-    
-    
 
   this.cliente={"nombre":this.nombre,"dui":this.dui,"vehiculo":this.vehiculo,"costo":this.costo,"descuento":this.descuento,"total":this.total,"visita":repdui.length,};
   this.registro.push(this.cliente);
