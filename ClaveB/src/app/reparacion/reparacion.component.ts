@@ -31,7 +31,7 @@ export class ReparacionComponent implements OnInit {
   ingresar(){
 
     for(var i=0; i<=this.registro.length;i++){ 
-    if(this.registro[i].nombre==this.nombre){ //Parte donde no he podido resolver
+    if(this.registro[i].dui==this.dui){ //Parte donde no he podido resolver
       this.visita++;
     }
     else{
