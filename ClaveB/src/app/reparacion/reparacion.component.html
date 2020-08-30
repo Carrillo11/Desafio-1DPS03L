@@ -1,26 +1,26 @@
-<div class="header">
+
+
+ <div class="form" >
     <h1>Datos del Cliente</h1>
     <p>Ingrese de la reparación.</p>
-    </div>
-    <label>Nombre:</label>
-    <input type="text" [(ngModel)]="nombre">
-    <label>DUI:</label>
-    <input type="text" [(ngModel)]="dui">
-    <label>Vehiculo:</label>
-    <input type="text" [(ngModel)]="vehiculo">
-    <label>Costo:</label>
-    <input type="number" [(ngModel)]="costo" min=0>
+    <input type="text" [(ngModel)]="nombre"  placeholder="Nombre"  required/>
+    <input type="number" [(ngModel)]="dui"  placeholder="DUI"  required/>
+    <input type="text" [(ngModel)]="vehiculo" placeholder="Vehiculo"  required/>
+    <input type="number" [(ngModel)]="costo"  min=0 placeholder="Costo"  required/>
     <button class="button" (click)="ingresar()">Ingresar</button>
-    <br/><br/>
-    <table [hidden]="contador == 0">
+</div>
+    <div class="contenedor">
+        <h1>Control de Ventas</h1>
+    <table [hidden]="contador == 0" class="tabla">
     <thead>
     <tr>
     <th>Nombre</th>
     <th>DUI</th>
     <th>Vehiculo</th>
     <th>Costo</th>
+    <th>Descuento</th>
+    <th>Total</th>
     <th>Visita</th>
-    <th>Contador</th>
     </tr>
     </thead>
     <tbody>
@@ -28,9 +28,12 @@
         <td>{{tcliente.nombre}}</td>
         <td>{{tcliente.dui}}</td>
         <td>{{tcliente.vehiculo}}</td>
-        <td>{{tcliente.costo}}</td>
+        <td>${{tcliente.costo}}</td>
+        <td class="color-des">-${{tcliente.descuento}}</td>
+        <td class="color-tot">${{tcliente.total}}</td>
         <td>{{tcliente.visita}}</td>
-        <td>{{tcliente.contador}}</td>
         </tr>
         </tbody>
         </table>
+    </div>
+    
